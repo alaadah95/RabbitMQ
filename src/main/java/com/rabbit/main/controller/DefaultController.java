@@ -19,6 +19,7 @@ public class DefaultController {
 	@PostMapping("/default")
     public ResponseEntity<?> sendMessageWithDefaultExchange()
     {
+		//message
         QueueObject object = new QueueObject("default", LocalDateTime.now());
 
         defaultExchange.convertAndSend(object);

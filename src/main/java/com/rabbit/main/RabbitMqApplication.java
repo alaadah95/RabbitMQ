@@ -8,10 +8,14 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rabbit.main.streams.source.Notification;
+import com.rabbit.main.streams.source.Publisher;
 
+@EnableBinding({Publisher.class,Notification.class})
 @SpringBootApplication
 public class RabbitMqApplication {
 
@@ -69,8 +73,9 @@ public class RabbitMqApplication {
 	@Bean
 	public MessageConverter messageConverter() {
 		ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
-
 		return new Jackson2JsonMessageConverter(objectMapper);
 	}
-
+	
+ 
+	
 }
