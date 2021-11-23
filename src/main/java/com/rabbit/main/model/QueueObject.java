@@ -2,17 +2,36 @@ package com.rabbit.main.model;
 
 import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-@Getter
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class QueueObject {
-	
+
 	private String type;
 	private LocalDateTime time;
+
+	
+	
+	public QueueObject() {
+	}
+
+	public QueueObject(String type, LocalDateTime time) {
+		this.type = type;
+		this.time = time;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public LocalDateTime getTime() {
+		return time;
+	}
+
+	public void setTime(LocalDateTime time) {
+		this.time = time;
+	}
+	
+
 }

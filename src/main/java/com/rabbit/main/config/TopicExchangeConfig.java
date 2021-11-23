@@ -59,15 +59,15 @@ public class TopicExchangeConfig {
 	}
 
 	Binding createTopicBinding1() {
-		return BindingBuilder.bind(createTopicQueue1()).to(createTopicExchange()).with(TOPIC_PATTERN_1);
+		return BindingBuilder.bind(createTopicQueue1()).to(createTopicExchange()).with(TOPIC_PATTERN_1); //*.topic.*
 	}
 
 	Binding createTopicBinding2() {
-		return BindingBuilder.bind(createTopicQueue2()).to(createTopicExchange()).with(TOPIC_PATTERN_2);
+		return BindingBuilder.bind(createTopicQueue2()).to(createTopicExchange()).with(TOPIC_PATTERN_2); //first.topic.#
 	}
 
 	Binding createTopicBinding3() {
-		return BindingBuilder.bind(createTopicQueue3()).to(createTopicExchange()).with(TOPIC_PATTERN_3);
+		return BindingBuilder.bind(createTopicQueue3()).to(createTopicExchange()).with(TOPIC_PATTERN_3); //second.topic.*
 	}
 
 	@Bean

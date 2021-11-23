@@ -29,7 +29,7 @@ public class WebSocketChatEventListener {
 			chatMessage.setType("Leave");
 			chatMessage.setSender(username);
 			messagingTemplate.convertAndSend("/topic/javainuse", chatMessage);
-			System.out.println(username + "leave the group");
+			System.out.println(username + " leaves the group");
 		}
 	}
 }
